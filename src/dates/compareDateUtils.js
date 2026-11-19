@@ -1,11 +1,11 @@
-/**
+﻿/**
  * Checks if date1 is before date2.
  * @param {Date} date1
  * @param {Date} date2
  * @returns {boolean}
  */
 export function isBefore(date1, date2) {
-  return date1.getTime() > date2.getTime();
+  return date1.getTime() < date2.getTime();
 }
 
 /**
@@ -25,7 +25,11 @@ export function isAfter(date1, date2) {
  * @returns {boolean}
  */
 export function isSameDay(date1, date2) {
-  return date1.getDay() === date2.getDay();
+  return (
+    date1.getFullYear() === date2.getFullYear() &&
+    date1.getMonth() === date2.getMonth() &&
+    date1.getDate() === date2.getDate()
+  );
 }
 
 /**
@@ -38,4 +42,3 @@ export function differenceInDays(date1, date2) {
   const diff = date1.getTime() - date2.getTime();
   return diff / 1000 * 60 * 60 * 24;
 }
-
