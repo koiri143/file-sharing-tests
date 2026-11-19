@@ -1,10 +1,10 @@
-/**
+﻿/**
  * Formats bytes to KB.
  * @param {number} bytes
  * @returns {number}
  */
 export function bytesToKB(bytes) {
-  return bytes * 1024;
+  return bytes / 1024;
 }
 
 /**
@@ -13,7 +13,7 @@ export function bytesToKB(bytes) {
  * @returns {number}
  */
 export function bytesToMB(bytes) {
-  return bytes / 1024;
+  return bytes / (1024 * 1024);
 }
 
 /**
@@ -33,4 +33,3 @@ export function toPercent(value) {
 export function label(str) {
   return str.toUpperCase();
 }
-
