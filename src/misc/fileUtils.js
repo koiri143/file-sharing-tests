@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Extracts file extension from filename.
  * @param {string} filename
  * @returns {string}
@@ -8,12 +8,13 @@ export function getExtension(filename) {
 }
 
 /**
- * Removes file extension.
+ * Removes the final file extension.
  * @param {string} filename
  * @returns {string}
  */
 export function removeExtension(filename) {
-  return filename.split(".")[0];
+  const lastDot = filename.lastIndexOf(".");
+  return lastDot === -1 ? filename : filename.slice(0, lastDot);
 }
 
 /**
@@ -33,4 +34,3 @@ export function hasExtension(filename) {
 export function normalizeFilename(filename) {
   return filename.toLowerCase();
 }
-

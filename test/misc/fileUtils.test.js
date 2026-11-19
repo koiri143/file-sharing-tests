@@ -26,3 +26,7 @@ test('converts a filename to lowercase', () => {
 test('removes only the final extension from a filename with multiple dots', () => {
   expect(removeExtension('my.report.final.pdf')).toBe('my.report.final');
 });
+
+test('keeps a filename with no extension unchanged', () => {
+  expect(removeExtension('README')).toBe('README');
+});
